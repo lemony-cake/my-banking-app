@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="app-page">
       Account Overview
   </div>
 </template>
