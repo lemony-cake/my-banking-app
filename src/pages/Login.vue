@@ -8,26 +8,6 @@ const router = useRouter()
 const username = ref('TestUser')
 const password = ref('DummyPass123')
 
-/**
- * 4. Trigger the relevant API requests when the user clicks certain buttons, e.g., "init" when
-clicking the Login button, then "getScore" when clicking a Make Payment button.
-You can either trigger these API requests from the client-side, or use Postman.
-An example to API init request:
-URL: https://hooks.zapier.com/hooks/catch/1888053/bgwofce/
-method: POST
-payload/body:
-{
-"customerId": "dummy",
-"action": "init",
-"customerSessionId": "WHAT_YOU_HAVE_SET_IN_THE_CLIENT_SIDE",
-"activityType": "LOGIN",
-"uuid": "USE_SOME_RANDOM_STRING",
-"brand": "SD",
-"solution": "ATO",
-"iam": "YOUR_EMAIL_ADDRESS_OR_FULL_NAME"
-}
- */
-
 const onLoginFormSubmit = async () => {
   await initWupCustomerSession()
 
