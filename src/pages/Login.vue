@@ -1,0 +1,54 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { initUserActivity } from '../api.ts'
+
+const router = useRouter()
+
+const username = ref('TestUser')
+const password = ref('DummyPass123')
+const loading = ref(false)
+
+const onLoginFormSubmit = async () => {
+  loading.value = true
+  await initWupCustomerSession()
+  loading.value = false
+
+  router.push('/home')
+}
+
+const initWupCustomerSession = async () => {
+  const sessionId = Math.random().toString(36).slice(2, 10)
+  const uuid = Math.random().toString(36).slice(2, 10)
+
+  await window.cdApi?.setCustomerSessionId(sessionId)
+  await initUserActivity(sessionId, uuid)
+  sessionStorage.setItem("custSessionId", sessionId)
+}
+</script>
+
+<template>
+  <div id="login-page">
+    <form @submit.prevent="onLoginFormSubmit">
+    <label for="username">Username:</label><br />
+    <input type="text" id="username" name="username" v-model="username" required /><br /><br />
+
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" name="password" v-model="password" required /><br /><br />
+
+    <button type="submit" :disabled="loading">
+      {{ loading ? 'Logging in...' : 'Log in' }}
+    </button>
+  </form>
+  </div>
+</template>
+
+<style scoped>
+#login-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-top: 24px;
+}
+</style>
