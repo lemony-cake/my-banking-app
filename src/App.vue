@@ -4,15 +4,15 @@
 
   const route = useRoute()
 
-  const showNav = computed(() => {
-    return route?.meta?.showNav || false
+  const isAuthenticated = computed(() => {
+    return !!route?.meta?.isAuth || false
   })
 
   import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
-  <NavBar v-if="showNav" />
+  <NavBar :is-auth="isAuthenticated" />
 
   <RouterView />
 </template>
