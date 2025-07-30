@@ -22,4 +22,23 @@ const router = createRouter({
   routes,
 })
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
+
+declare global {
+  interface Window {
+    cdApi: {
+      configurationKeys: {
+        wupServerURL: string
+        logServerURL: string
+        enableCustomElementsProcessing: string
+        collectionSettings: string
+      }
+      setCustomerSessionId: Function
+      getConfigurations: Function
+      changeContext: Function
+      setCustomerBrand: Function
+    }
+  }
+}

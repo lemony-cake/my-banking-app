@@ -11,6 +11,10 @@ const onLoginFormSubmit = () => {
   console.log('form submitted')
   router.push('/home')
 }
+
+const testing = () => {
+  console.log(window.cdApi)
+}
 </script>
 
 <template>
@@ -24,6 +28,8 @@ const onLoginFormSubmit = () => {
 
     <button type="submit">Login</button>
   </form>
+
+  <button @click="testing">Test</button>
   </div>
 </template>
 
