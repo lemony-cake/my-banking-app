@@ -7,13 +7,15 @@ const router = useRouter()
 const username = ref('Test')
 const password = ref('DummyPass123')
 
-const onLoginFormSubmit = () => {
-  console.log('form submitted')
+const onLoginFormSubmit = async () => {
+  await initWupCustomerSession()
+
   router.push('/home')
 }
 
-const testing = () => {
-  console.log(window.cdApi)
+const initWupCustomerSession = async () => {
+  const sessionId = Math.random().toString(36).slice(2, 10)
+  await window.cdApi?.setCustomerSessionId(sessionId)
 }
 </script>
 
@@ -28,8 +30,6 @@ const testing = () => {
 
     <button type="submit">Login</button>
   </form>
-
-  <button @click="testing">Test</button>
   </div>
 </template>
 
