@@ -7,9 +7,12 @@ const router = useRouter()
 
 const username = ref('TestUser')
 const password = ref('DummyPass123')
+const loading = ref(false)
 
 const onLoginFormSubmit = async () => {
+  loading.value = true
   await initWupCustomerSession()
+  loading.value = false
 
   router.push('/home')
 }
@@ -33,7 +36,9 @@ const initWupCustomerSession = async () => {
     <label for="password">Password:</label><br />
     <input type="password" id="password" name="password" v-model="password" required /><br /><br />
 
-    <button type="submit">Login</button>
+    <button type="submit" :disabled="loading">
+      {{ loading ? 'Logging in...' : 'Log in' }}
+    </button>
   </form>
   </div>
 </template>
@@ -44,6 +49,6 @@ const initWupCustomerSession = async () => {
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: center;
+  padding-top: 24px;
 }
 </style>

@@ -9,9 +9,9 @@ const onLoginClick = () => {
 </script>
 
 <template>
-  <div>
-    Welcome to Lemon Bank
+  <div class="app-page">
+    <h2>Welcome to Lemon Bank</h2>
 
-    <button type="button" @click="onLoginClick">Login</button>
+    <button type="button" @click="onLoginClick">Log in to your account</button>
   </div>
 </template>
