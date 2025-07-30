@@ -10,11 +10,11 @@ import Payment from './pages/Payment.vue'
 import LandingPage from './pages/LandingPage.vue'
 
 const routes = [
-  { path: '/', component: LandingPage },
-  { path: '/home', component: HomeView },
-  { path: '/login', component: LoginView },
-  { path: '/account', component: AccountView },
-  { path: '/payment', component: Payment },
+  { path: '/', component: LandingPage, meta: { showNav: false } },
+  { path: '/login', component: LoginView, meta: { showNav: false }  },
+  { path: '/home', component: HomeView, meta: { showNav: true } },
+  { path: '/account', component: AccountView, meta: { showNav: true }  },
+  { path: '/payment', component: Payment, meta: { showNav: true }  },
 ]
 
 const router = createRouter({
