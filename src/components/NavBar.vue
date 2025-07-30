@@ -50,8 +50,13 @@
     color: black;
     font-weight: 500;
     padding: 0 12px;
+    transition: color 0.2s ease-in-out;
 }
 .nav-link-logout {
     margin-left: auto;
+}
+
+.nav-link:hover {
+    color: rgb(20, 78, 9);
 }
 </style>

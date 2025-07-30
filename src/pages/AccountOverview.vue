@@ -4,6 +4,6 @@
 
 <template>
   <div class="app-page">
-      Account Overview
+    <h2>Account Overview</h2>
   </div>
 </template>

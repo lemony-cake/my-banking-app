@@ -13,7 +13,7 @@ const onPaymentClick = async () => {
 
 <template>
   <div class="app-page">
-      Payment
+      <h2>Payment</h2>
 
       <button @click="onPaymentClick">Make payment</button>
   </div>

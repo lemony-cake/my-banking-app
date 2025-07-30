@@ -24,7 +24,7 @@ import { RouterLink } from 'vue-router'
 <style scoped>
 .home-menu-item {
   padding: 24px 32px;
-  background: rgb(206, 206, 206);
+  background: rgb(232, 232, 232);
   border-radius: 8px;
   margin-bottom: 12px;
   color: rgb(51, 69, 14);
