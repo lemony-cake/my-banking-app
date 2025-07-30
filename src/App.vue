@@ -4,7 +4,9 @@
 
 <template>
   <div>
-      Hello
+      Welcome to Lemon Bank
+
+      <button type="button">Login</button>
   </div>
 </template>
 
