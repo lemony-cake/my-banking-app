@@ -37,8 +37,10 @@ const onLoginFormSubmit = async () => {
 const initWupCustomerSession = async () => {
   const sessionId = Math.random().toString(36).slice(2, 10)
   const uuid = Math.random().toString(36).slice(2, 10)
+
   await window.cdApi?.setCustomerSessionId(sessionId)
   await initUserActivity(sessionId, uuid)
+  sessionStorage.setItem("custSessionId", sessionId)
 }
 </script>
 
