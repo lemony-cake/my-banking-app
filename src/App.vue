@@ -3,11 +3,7 @@
 </script>
 
 <template>
-  <div>
-      Welcome to Lemon Bank
-
-      <button type="button">Login</button>
-  </div>
+  <RouterView />
 </template>
 
 <style scoped>
